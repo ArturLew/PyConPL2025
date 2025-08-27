@@ -1,6 +1,7 @@
 services:
   redis:
     image: redis:7-alpine
+    container_name: redis
     restart: always
     ports:
       - "6379:6379"
@@ -9,6 +10,7 @@ services:
     
   redis-insight:
     image: redis/redisinsight:latest
+    container_name: redis-insight
     restart: always
     ports:
       - "5540:5540"
@@ -16,6 +18,7 @@ services:
       - redis
 
   server:
+    container_name: server
     build: .
     environment:
       - REDIS_HOST=redis
@@ -26,6 +29,7 @@ services:
 
   nginx:
     image: nginx:1.25.3-alpine
+    container_name: nginx
     restart: always
     ports:
       - "8003:80"
