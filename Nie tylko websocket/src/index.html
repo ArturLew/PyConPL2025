@@ -20,10 +20,6 @@
       output.textContent += `💻 ${data.ip} 👉 📰 ${data.message}\n`
     })
 
-    eventSource.onmessage = (event) => {
-      output.textContent += `📰 Nowa wiadomość: ${event.data}\n`
-    }
-
     eventSource.onerror = (err) => {
       output.textContent += '⚠️ Wystąpił błąd w komunikacji\n'
     }
