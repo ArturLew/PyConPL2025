@@ -6,12 +6,9 @@ authors = [
     {name = "Artur Lew", email = "artur.lew@gmail.com"},
 ]
 dependencies = [
-    "fastapi>=0.116.1",
-    "uvicorn>=0.35.0",
     "returns>=0.26.0",
-    "pyperf>=2.9.0"
+    "pyperf>=2.9.0",
+    "uv>=0.8.14",
+    "aiohttp>=3.12.15",
 ]
 requires-python = ">=3.12"
-
-[tool.pdm.scripts]
-dev = "python main.py"
