@@ -1,0 +1,19 @@
+[project]
+name = ""
+version = "1.0"
+description = "Nie tylko websocket"
+authors = [
+    {name = "Artur Lew", email = "artur.lew@gmail.com"},
+]
+dependencies = [
+    "fastapi>=0.116.1",
+    "uvicorn>=0.35.0",
+    "redis>=6.4.0",
+    "sse-starlette>=3.0.2"
+]
+requires-python = ">=3.12"
+
+[tool.pdm.scripts]
+dev0.cmd = "uvicorn main:app --workers 1"
+dev1.cmd = "uvicorn main_simple:app --workers 1"
+dev2.cmd = "uvicorn main_ext:app --workers 1"

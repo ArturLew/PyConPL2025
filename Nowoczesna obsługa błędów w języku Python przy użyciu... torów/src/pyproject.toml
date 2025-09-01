@@ -1,0 +1,14 @@
+[project]
+name = ""
+version = "1.0"
+description = "Nowoczesna obsługa błędów w języku Python przy użyciu... torów"
+authors = [
+    {name = "Artur Lew", email = "artur.lew@gmail.com"},
+]
+dependencies = [
+    "returns>=0.26.0",
+    "pyperf>=2.9.0",
+    "uv>=0.8.14",
+    "aiohttp>=3.12.15",
+]
+requires-python = ">=3.12"

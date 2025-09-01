@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Test SSE</title>
+</head>
+<body>
+  <pre id="output"></pre>
+
+  <script>
+    const eventSource = new EventSource('http://localhost:8000/stream')
+    const output = document.getElementById('output')
+
+    eventSource.onopen = (event) => {
+      output.textContent += 'ℹ️ Podłączono do serwera\n'
+    }
+
+    eventSource.addEventListener('push', (event) => {
+      const data = JSON.parse(event.data);
+      output.textContent += `💻 ${data.ip} 👉 📰 ${data.message}\n`
+    })
+
+    eventSource.onerror = (err) => {
+      output.textContent += '⚠️ Wystąpił błąd w komunikacji\n'
+    }
+  </script>
+</body>
+</html>
